@@ -1,1 +1,3 @@
-from src.Homestayes_data.config.configuration import main
+from src.Homestayes_data import logger
+
+logger.info("my name is ritik")
