@@ -12,4 +12,4 @@ update the main.py
 update the app.py
 ```bash
 conda create -n mlproj python=3.10 -y
-```
+``` 
