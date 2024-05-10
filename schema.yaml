@@ -1,4 +1,4 @@
-colunms:
+COLUMNS:
   id: int64
   log_price: float64
   property_type: object
@@ -28,3 +28,6 @@ colunms:
   zipcode: object
   bedrooms: float64
   beds: float64
+
+TARGET_COLUMN:
+  name: log_price
