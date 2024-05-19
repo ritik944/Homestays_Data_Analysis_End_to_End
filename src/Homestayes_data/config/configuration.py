@@ -1,6 +1,6 @@
 from Homestayes_data.constants import *
 from Homestayes_data.utils.common import read_yaml,create_directories
-from Homestayes_data.entity.config_entity import DataIngestionConfig,DataValidationConfig
+from Homestayes_data.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig
 
 class ConfigurationManager:
     def __init__(
@@ -44,3 +44,15 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+    
+    def get_data_tranformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_tranforamtion_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path
+        )
+
+        return data_tranforamtion_config
