@@ -15,10 +15,13 @@ class DataTransformation:
 
     def train_test_spliting(self):
         data = pd.read_csv(self.config.data_path)
+        col=data.select_dtypes(include='object').columns
+        data.drop(columns=col,inplace=True)
+        data.dropna(inplace=True)
         train , test =train_test_split(data)
         
         train.to_csv(os.path.join(self.config.root_dir,"train.csv"),index=False)
-        test.to_csv(os.path.join(self.config.root_dir,"test_csv"),index=False)
+        test.to_csv(os.path.join(self.config.root_dir,"test.csv"),index=False)
         
         logger.info("splited data into training and test set")
         logger.info(train.shape)
