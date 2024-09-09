@@ -18,6 +18,7 @@ class DataTransformation:
         col=data.select_dtypes(include='object').columns
         data.drop(columns=col,inplace=True)
         data.dropna(inplace=True)
+        data.drop(columns='id',inplace=True)
         train , test =train_test_split(data)
         
         train.to_csv(os.path.join(self.config.root_dir,"train.csv"),index=False)
