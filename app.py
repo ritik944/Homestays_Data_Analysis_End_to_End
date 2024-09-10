@@ -34,23 +34,6 @@ def index():
             review_scores_rating=float(request.form['review_scores_rating'])
             bedrooms=float(request.form['bedrooms'])
             beds=float(request.form['beds'])
-            
-            
-            
-            # #  reading the inputs given by the user
-            # fixed_acidity =float(request.form['fixed_acidity'])
-            # volatile_acidity =float(request.form['volatile_acidity'])
-            # citric_acid =float(request.form['citric_acid'])
-            # residual_sugar =float(request.form['residual_sugar'])
-            # chlorides =float(request.form['chlorides'])
-            # free_sulfur_dioxide =float(request.form['free_sulfur_dioxide'])
-            # total_sulfur_dioxide =float(request.form['total_sulfur_dioxide'])
-            # density =float(request.form['density'])
-            # pH =float(request.form['pH'])
-            # sulphates =float(request.form['sulphates'])
-            # alcohol =float(request.form['alcohol'])
-       
-         
             data = [accommodates, bathrooms, cleaning_fee,latitude, longitude, number_of_reviews, review_scores_rating,bedrooms, beds]
             data = np.array(data).reshape(1, 9)
             
